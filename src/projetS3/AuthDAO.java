@@ -20,41 +20,37 @@ public class AuthDAO {
 	}
 	
 	public User getUserByPseudo(String pseudo){
+		User personne = null;
 		try{
 			Connection con = getConnection();
-			User personne;
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM personne WHERE pseudo="+pseudo);
-			if(rs.next()){
-				personne = new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
-			}else{
-				personne = null;
+			ResultSet rs = stmt.executeQuery("SELECT * FROM personne WHERE pseudo='"+pseudo+"'");
+			while(rs.next()){
+				personne = new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));	
 			}
 			con.close();
 			return personne;
 		}catch(Exception e){
 			System.out.println("getUserByPseudo error : "+e.getStackTrace());
 		}
-		return null;
+		return personne;
 	}
 	
 	public User getUser(String pseudo,String password){
+		User personne = null;
 		try{
 			Connection con = getConnection();
-			User personne;
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM personne WHERE pseudo="+pseudo+" AND password="+password);
-			if(rs.next()){
+			ResultSet rs = stmt.executeQuery("SELECT * FROM personne WHERE pseudo='"+pseudo+"' AND mdp='"+password+"'");
+			while(rs.next()){
 				personne = new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
-			}else{
-				personne = null;
 			}
 			con.close();
 			return personne;
 		}catch(Exception e){
 			System.out.println("getUser error : "+e.getStackTrace());
 		}
-		return null;
+		return personne;
 	}
 	
 	public int getLastID(){
