@@ -1,0 +1,147 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background: #555753;
+	margin-bottom: 100px;
+}
+
+#titre {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	margin-top: 0;
+	margin-bottom: 0;
+	color: #1e1e1e;
+	background-color: #e7e5e4;
+	font-family: 'Gabriela', serif;
+	font-size: 100px;
+	letter-spacing: .10em;
+	text-align: center;
+	text-shadow: 1px -1px 0 #767676, -1px 2px 1px #767474, -2px 4px 1px
+		#7b7a7a, -3px 6px 1px #828181, -4px 8px 1px #8b8a89, -5px 10px 1px
+		#949392, -6px 12px 1px #9e9c9c, -7px 14px 1px #a8a6a6, -8px 16px 1px
+		#b2b1b0, -9px 18px 1px #bcbbba, -10px 20px 1px #c6c4c4, -11px 22px 1px
+		#cfcdcd, -12px 24px 1px #d8d6d5, -13px 26px 1px #dfdddc, -14px 28px
+		1px #e4e3e2;
+}
+
+#presentation {
+	color: white;
+	font-family: 'Gabriela', serif;
+	font-size: 20px;
+	letter-spacing: .10em;
+	text-align: center;
+	margin: 20px;
+}
+
+label {
+	display: block;
+	float: left;
+	width: 150px;
+	color: #f57900;
+	font-family: 'Gabriela', serif;
+	font-size: 15px;
+	letter-spacing: .10em;
+}
+
+#Inscription {
+	margin-left: 100px;
+	margin-top: 50px;
+}
+
+#Connexion {
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+#inscr {
+	margin-left: 150px;
+	font-family: 'Gabriela', serif;
+	font-size: 20px;
+	letter-spacing: .10em;
+}
+
+#conn {
+	margin-left: 150px;
+	font-family: 'Gabriela', serif;
+	font-size: 20px;
+	letter-spacing: .10em;
+}
+
+table {
+	border: medium solid #6495ed;
+	border-collapse: collapse;
+	width: 50%;
+}
+
+th {
+	font-family: monospace;
+	border: thin solid #6495ed;
+	width: 50%;
+	padding: 5px;
+	background-color: #D0E3FA;
+}
+
+td {
+	font-family: sans-serif;
+	border: thin solid #6495ed;
+	width: 50%;
+	padding: 5px;
+	text-align: center;
+	background-color: #ffffff;
+}
+
+caption {
+	font-family: 'Gabriela', serif;
+	font-size: 20px;
+	letter-spacing: .10em;
+}
+
+.ds_box {
+	background-color: #FFF;
+	border: 1px solid #000;
+	position: absolute;
+	z-index: 32767;
+}
+
+.ds_tbl {
+	background-color: #FFF;
+}
+
+.ds_head {
+	background-color: #333;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.ds_subhead {
+	background-color: #CCC;
+	color: #000;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 32px;
+}
+
+.ds_cell {
+	background-color: #EEE;
+	color: #000;
+	font-size: 13px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.ds_cell:hover {
+	background-color: #F3F3F3;
+} /* This hover code won't work for IE */
