@@ -43,7 +43,12 @@
 				<label>Mot de passe : </label><input type="password" name="password" /><br/>
 				<label>Prenom : </label><input type="text" name="prenom" /><br/>
 				<label>Nom : </label><input type="text" name="nom" /><br/>
-				<label>Role : </label><input type="text" name="role" /><br/>
+				<label>Role : </label>
+				<select name="role" id="role">
+					<option value="etudiant"> Etudiant </option>
+					<option value="secretaire"> Secretaire</option>
+					<option value="prof"> Professeur</option>
+				</select> <br>
 				<input type="submit" value="Entrer" name="submitR" />
 			</form>
 		</nav>
