@@ -15,10 +15,12 @@
 		if(curUser == null){
 			response.sendRedirect("index.jsp");
 		}else{
+			AbsDAO absBdd = new AbsDAO();
+			
 			if(curUser.getRole().equals("secretaire")){
 				out.println("secretaire");
 			}else if(curUser.getRole().equals("etudiant")){
-				out.println("etudiant");
+				out.println(absBdd.findAllAbs(curUser.getId()));
 			}else if(curUser.getRole().equals("enseignant")){
 				out.println("enseignant");
 			}else{

@@ -27,15 +27,24 @@ public class AbsDAO {
 		try{
 			Connection con = getConnection();
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM absences WHERE ida="+id);
+			ResultSet rs = stmt.executeQuery("SELECT * FROM absence WHERE ida="+id);
 			
 			affichage += "<table>";
 			affichage += "<tr>";
-			affichage += 	"<th></th>";
-			affichage += 	"<th></th>";
+			affichage += 	"<th>Cours</th>";
+			affichage += 	"<th>Date</th>";
+			affichage += 	"<th>Matin</th>";
+			affichage += 	"<th>Aprem</th>";
+			affichage += 	"<th>Justifié</th>";
 			affichage += "</tr>";
 			while(rs.next()){
-				
+				affichage += "<tr>";
+				affichage += 	"<td>"+rs.getString(2)+"</td>";
+				affichage += 	"<td>"+rs.getString(3)+"</td>";
+				affichage += 	"<td>"+rs.getString(4)+"</td>";
+				affichage += 	"<td>"+rs.getString(5)+"</td>";
+				affichage += 	"<td>"+rs.getString(6)+"</td>";
+				affichage += "</tr>";
 			}
 			affichage += "</table>";
 			con.close();

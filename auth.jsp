@@ -100,13 +100,7 @@
 					User temp = auth.getUser(pseudo,mdp);
 					if(temp != null){
 						session.setAttribute("utilisateur", temp);
-						if(temp.getRole().equals("secretaire")){
-							response.sendRedirect("panel.jsp");
-						}else if(temp.getRole().equals("etudiant")){
-							response.sendRedirect("panel.jsp");
-						}else if(temp.getRole().equals("enseignant")){
-							response.sendRedirect("panel.jsp");
-						}
+						response.sendRedirect("panel.jsp");
 						
 					}else{
 						response.sendRedirect("index.jsp?error=4"); // ERREUR UTILISATEUR INTROUVABLE
