@@ -36,8 +36,8 @@
 	%>
 	<h2 id="inscr">Absence</h2>
 	<nav id="Inscription">
-		<form method="POST" action="auth.jsp">
-			<label>Nom : </label><input type="text" name="id" /><br /> 
+		<form method="POST" action="abs.jsp">
+			<label>Nom : </label><input type="text" name="name" /><br /> 
 			<label>prenom: </label><input type="text" name="libelle" /><br /> 
 			<label>Date: </label> <br>
 			<label> Matin </label><input type="checkbox" name="date" /><br /> 

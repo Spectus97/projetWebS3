@@ -15,8 +15,13 @@
 			AuthDAO auth = new AuthDAO();
 			boolean error = false; 
 			
+			// DECONNEXION
+			if(request.getParameter("disconnect") != null && request.getParameter("disconnect").equals("1")){
+				session.setAttribute("utilisateur", null);
+				response.sendRedirect("index.jsp");
+			}
 			
-			// On gere la session ici, si l'user is logged alors redirect
+			/* On gere la session ici, si l'user is logged alors redirect
 			User curUser = (User)session.getAttribute("utilisateur");
 			if(curUser != null){
 				if(curUser.getRole().equals("secretaire")){
@@ -26,7 +31,7 @@
 				}else if(curUser.getRole().equals("enseignant")){
 					response.sendRedirect("panel.jsp");
 				}
-			}
+			}*/
 		
 			if(request.getParameter("submitR") != null){
 				String pseudo = "";
@@ -109,9 +114,6 @@
 				}else{
 					response.sendRedirect("index.jsp?error=1"); // ERREUR DES CHAMPS
 				}
-			}else if(request.getParameter("disconnect") != null && request.getParameter("disconnect").equals("1")){
-				session.setAttribute("utilisateur", null);
-				response.sendRedirect("index.jsp");
 			}
 			
 		
