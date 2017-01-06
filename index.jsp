@@ -47,7 +47,7 @@
 				<select name="role" id="role">
 					<option value="etudiant"> Etudiant </option>
 					<option value="secretaire"> Secretaire</option>
-					<option value="prof"> Professeur</option>
+					<option value="enseignant"> Professeur</option>
 				</select> <br>
 				<input type="submit" value="Entrer" name="submitR" />
 			</form>
