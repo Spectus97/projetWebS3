@@ -37,12 +37,13 @@
 	<h2 id="inscr">Absence</h2>
 	<nav id="Inscription">
 		<form method="POST" action="abs.jsp">
-			<label>Nom : </label><input type="text" name="name" /><br /> 
-			<label>prenom: </label><input type="text" name="libelle" /><br /> 
-			<label>Date: </label> <br>
-			<label> Matin </label><input type="checkbox" name="date" /><br /> 
-			<label> Après-midi </label><input type="checkbox" name="date" /><br /> 
-			<input type="submit" value="Entrer" name="submitR" />
+			<label>Nom : </label><input type="text" name="nom" /><br /> 
+			<label>prenom: </label><input type="text" name="prenom" /><br /> 
+			<label>Cours: </label><input type="text" name="cours"/><br/>
+			<label>Date: </label><input type="date" name="date" /><br /> <br>
+			<label> Matin </label><input type="checkbox" name="matin" /><br /> 
+			<label> Après-midi </label><input type="checkbox" name="aprem" /><br /> 
+			<input type="submit" value="Entrer" name="submitA" />
 		</form>
 	</nav>
 	<%
@@ -51,6 +52,6 @@
 			}
 		}
 	%>
-
+	<a href="index.jsp"> Déconnecter </a>
 </body>
 </html>
