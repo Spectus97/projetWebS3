@@ -5,12 +5,12 @@ import java.sql.Date;
 public class Absences {
 	private int idEtu;
 	private String cours;
-	private Date date;
-	private boolean matin;
-	private boolean aprem;
+	private String date;
+	private String matin;
+	private String aprem;
 	private boolean estJustifie;
 	
-	public Absences(int id,String cours,Date d,boolean matin,boolean aprem){
+	public Absences(int id,String cours,String d,String matin,String aprem){
 		this.setIdEtu(id);
 		this.setCours(cours);
 		this.setDate(d);
@@ -35,19 +35,19 @@ public class Absences {
 		this.cours = cours;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-	public boolean isMatin() {
+	public String isMatin() {
 		return matin;
 	}
 
-	public void setMatin(boolean matin) {
+	public void setMatin(String matin) {
 		this.matin = matin;
 	}
 
@@ -59,11 +59,11 @@ public class Absences {
 		this.estJustifie = estJustifie;
 	}
 
-	public boolean isAprem() {
+	public String isAprem() {
 		return aprem;
 	}
 
-	public void setAprem(boolean aprem) {
+	public void setAprem(String aprem) {
 		this.aprem = aprem;
 	}
 }

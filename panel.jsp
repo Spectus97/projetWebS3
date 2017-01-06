@@ -21,18 +21,20 @@
 	%>
 	<h2 id="inscr">Justification</h2>
 	<nav id="Inscription">
-		<form method="POST" action="auth.jsp">
-			<label>ID etudiant : </label><input type="text" name="id" /><br />
+		<form method="POST" action="justif.jsp">
+			<label>Nom : </label><input type="text" name="nom" /><br /> 
+			<label>prenom: </label><input type="text" name="prenom" /><br /> 
 			<label>Libelle : </label><input type="text" name="libelle" /><br />
 			<label>Date debut : </label><input type="date" name="dateDeb" /><br />
 			<label>Date fin : </label><input type="date" name="dateFin" /><br />
-			<input type="submit" value="Entrer" name="submitR" />
+			<input type="submit" value="Entrer" name="submitJ" />
 		</form>
 	</nav>
 	<%
 		} else if (curUser.getRole().equals("etudiant")) {
 				out.println(absBdd.findAllAbs(curUser.getId()));
 			} else if (curUser.getRole().equals("enseignant")) {
+			
 	%>
 	<h2 id="inscr">Absence</h2>
 	<nav id="Inscription">

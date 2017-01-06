@@ -36,6 +36,23 @@ public class AuthDAO {
 		return personne;
 	}
 	
+	public User getUserByName(String name,String prenom){
+		User personne = null;
+		try{
+			Connection con = getConnection();
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM personne WHERE nom='"+name+"' AND prenom='"+prenom+"' ");
+			while(rs.next()){
+				personne = new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));	
+			}
+			con.close();
+			return personne;
+		}catch(Exception e){
+			System.out.println("getUserByName error : "+e.getStackTrace());
+		}
+		return personne;
+	}
+	
 	public User getUser(String pseudo,String password){
 		User personne = null;
 		try{

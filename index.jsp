@@ -41,7 +41,7 @@
 		<div class="form-style-2-heading">Inscription</div>
 		<form method="POST" action="auth.jsp">
 			<label for="field1"><span>Identifiant <span class="required"></span></span><input type="text" class="input-field" name="pseudo" /></label><br/>
-			<label for="field2"><span>Mot de passe <span class="required"></span></span><input type="text" class="input-field" name="password" /></label><br/>
+			<label for="field2"><span>Mot de passe <span class="required"></span></span><input type="password" class="input-field" name="password" /></label><br/>
 			<label for="field2"><span>Prenom <span class="required"></span></span><input type="text" class="input-field" name="prenom" /></label><br/>
 			<label for="field2"><span>Nom <span class="required"></span></span><input type="text" class="input-field" name="nom" /></label><br/>
 				<label for="field4"><span>Role</span> </label>
@@ -60,7 +60,7 @@
 		<div class="form-style-3-heading">Connexion</div>
 		<form method="POST" action="auth.jsp">
 			<label for="field1"><span>Identifiant <span class="required"></span></span><input type="text" class="input-field" name="pseudo" /></label><br/>
-			<label for="field2"><span>Mot de passe <span class="required"></span></span><input type="text" class="input-field" name="password" /></label><br/>
+			<label for="field2"><span>Mot de passe <span class="required"></span></span><input type="password" class="input-field" name="password" /></label><br/>
 			<input type="submit" value="Entrer" name="submitL" />
 		</form>
 	</div>

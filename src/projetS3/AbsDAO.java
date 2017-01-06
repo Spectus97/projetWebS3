@@ -53,4 +53,20 @@ public class AbsDAO {
 		}
 		return affichage;
 	}
+	
+	public boolean addAbs(Absences abs){
+		try{
+			JustifDao justifDao = new JustifDao();
+			Connection con = getConnection();
+			Statement stmt = con.createStatement();
+			stmt.executeUpdate("INSERT INTO absence VALUES("+abs.getIdEtu()+",'"+abs.getCours()+"','"+abs.getDate()
+			+"','"+abs.isMatin()+"','"+abs.isAprem()+"','"+abs.isEstJustifie()+"')");
+			justifDao.checkJustifAbs(abs.getIdEtu());
+			con.close();
+			return true;
+		}catch(Exception e){
+			System.out.println("addAbs error : "+e.getStackTrace());
+		}
+		return false;
+	}
 }

@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="javax.swing.text.DefaultEditorKit.CutAction"%>
 <%@page import="projetS3.AuthDAO"%>
 <%@ page pageEncoding="utf-8" %>
@@ -41,10 +42,39 @@
 			
 			AbsDAO absBdd = new AbsDAO();
 			
-			if(request.getParameter("submitA") != null && request.getParameter("nom") != null && request.getParameter("prenom") != null && request.getParameter("date") != null && request.getParameter("id") != null){
-				
+			if(curUser.getRole().equals("enseignant")){
+				if(request.getParameter("submitA") != null && request.getParameter("nom") != null && request.getParameter("prenom") != null && request.getParameter("cours") != null && request.getParameter("date") != null){
+					User temp = auth.getUserByName(request.getParameter("nom"), request.getParameter("prenom"));
+					if(temp != null && temp.getRole().equals("etudiant")){
+						String mat = "f";
+						String apr = "t";
+						if(request.getParameter("matin") != null){
+							mat = "t";
+						}
+						
+						if(request.getParameter("aprem") != null){
+							apr = "t";
+						}
+						
+						Absences tmpAbs = new Absences(temp.getId(),
+								request.getParameter("cours"),
+								request.getParameter("date"),
+								mat,
+								apr); 
+						
+						if(absBdd.addAbs(tmpAbs)){
+							response.sendRedirect("panel.jsp?successAbs=1"); // success : reussis
+						}else{
+							response.sendRedirect("panel.jsp?errorAbs=3"); // error : abs bdd pb
+						}
+					}else{
+						response.sendRedirect("panel.jsp?errorAbs=2"); // error : etu introuvable
+					}
+				}else{
+					response.sendRedirect("panel.jsp?errorAbs=1"); // error : parametre null
+				}
 			}else{
-				response.sendRedirect("panel.jsp?error=1"); // error : parametre null
+				response.sendRedirect("panel.jsp");
 			}
 			
 		
